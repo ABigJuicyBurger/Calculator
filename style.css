@@ -51,7 +51,7 @@ body {
   padding: 2px;
   margin: 2px;
   width: 20%;
-  height: 40px;
+  height: 30px;
   text-align: center;
   background: linear-gradient(to bottom, #f0f0f0, #d0d0d0); /* Add this line */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add this line */
@@ -65,13 +65,38 @@ body {
   flex-wrap: wrap;
   width: 60%;
   height: 90%;
+  margin-top: 31%;
 }
 
 #operators {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   border: 10px solid red;
   padding: 1%;
   margin-left: 10px;
   width: 20%;
+  height: 90%;
+}
+
+#operators .button {
+  padding: 10px;
+  margin: 5px 0;
+}
+
+#clear {
+  border: 1px solid green;
+  position: relative;
+  top: 136px;
+  margin: 10px auto;
+  width: 50px;
+  right: 50px;
+}
+
+#clear .button {
+  padding: 10px;
+  margin: 5px 0;
+  width: 100%;
 }
 
 #gripPad {
