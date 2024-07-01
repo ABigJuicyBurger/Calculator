@@ -35,3 +35,20 @@ function operate(operator, a, b) {
       return "Invalid operator";
   }
 }
+
+let screen = document.getElementById("screen");
+let numberButtons = document.querySelectorAll(".number");
+let operatorButtons = document.querySelectorAll(".operator");
+
+// create function to populate display on number button click
+function screenUpdate()
+
+
+
+
+
+
+
+
+
+numberButtons.addEventListener("click", screenUpdate);
