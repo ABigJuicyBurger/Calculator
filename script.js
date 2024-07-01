@@ -1,6 +1,6 @@
 // Define number operator and another number
-let firstNumber = a;
-let secondNumber = b;
+let firstNumber;
+let secondNumber;
 let Operator;
 
 // Functions for all basic math operators on calculators
@@ -18,4 +18,20 @@ function multiply(a, b) {
 
 function divide(a, b) {
   return a / b;
+}
+
+// Function operate that takes an operator & 2 numbers and calls one of above functions on the numbers
+function operate(operator, a, b) {
+  switch (operator) {
+    case "+":
+      return add(a, b);
+    case "-":
+      return subtract(a, b);
+    case "*":
+      return multiply(a, b);
+    case "/":
+      return divide(a, b);
+    default:
+      return "Invalid operator";
+  }
 }
