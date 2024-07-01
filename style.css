@@ -1,0 +1,18 @@
+body {
+  min-height: 100vh;
+}
+
+#background {
+  background-color: darkgray;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#calculator {
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 600px;
+}
