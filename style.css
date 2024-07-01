@@ -16,3 +16,48 @@ body {
   width: 400px;
   height: 600px;
 }
+
+#solar {
+  border: 1px solid black;
+  padding: 15px;
+  margin: 8px;
+  padding-top: 15px;
+  width: 50%;
+  background-color: rgb(185, 172, 172);
+}
+
+#screen {
+  border: 1px solid black;
+  padding: 15px;
+  margin: 10px;
+  width: 87%;
+  background-color: rgb(230, 221, 221);
+}
+
+#buttons {
+  display: flex;
+}
+
+.button {
+  border: 1px solid black;
+  padding: 2px;
+  margin: 2px;
+  text-align: center;
+}
+
+#digits {
+  border: 10px solid red;
+  padding: 1%;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 20%;
+}
+
+#operators {
+  border: 10px solid red;
+  padding: 1%;
+  margin-left: 10px;
+  width: 20%;
+}
