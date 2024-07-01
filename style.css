@@ -55,17 +55,17 @@ body {
   margin: 2px;
   width: 20%;
   height: 30px;
-  text-align: center;
   background: linear-gradient(to bottom, #f0f0f0, #d0d0d0); /* Add this line */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add this line */
 }
 
 #digits {
-  border: 10px solid red;
+  border: 10px solid rgba(0, 0, 0, 0.116);
   padding: 1%;
   margin-left: 10px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
   width: 60%;
   height: 90%;
   margin-top: 31%;
@@ -74,8 +74,8 @@ body {
 #operators {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  border: 10px solid red;
+  justify-content: space-around;
+  border: 10px solid rgba(0, 0, 0, 0.116);
   padding: 1%;
   margin-left: 10px;
   width: 20%;
@@ -83,8 +83,9 @@ body {
 }
 
 #operators .button {
-  padding: 10px;
   margin: 5px 0;
+  align-self: center;
+  width: 30px;
 }
 
 #clear {
