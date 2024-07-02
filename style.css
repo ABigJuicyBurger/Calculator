@@ -57,6 +57,15 @@ body {
   height: 30px;
   background: linear-gradient(to bottom, #f0f0f0, #d0d0d0); /* Add this line */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add this line */
+  transition: transform 0.1 ease-in-out; /* on hover on transform... */
+}
+
+.button:hover {
+  transform: scale(0.95) translateY(2px); /* 3d button effect**/
+}
+
+.button:active {
+  background: linear-gradient(to bottom, #f0f0f0, #d0d0d01e);
 }
 
 #digits {
