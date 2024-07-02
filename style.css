@@ -5,7 +5,7 @@ body {
 }
 
 #background {
-  background-color: darkgray;
+  background-color: rgb(92, 87, 77);
   display: flex;
   align-items: center;
   justify-content: space-around;
