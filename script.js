@@ -1,7 +1,8 @@
 // Define number operator and another number
-let firstNumber;
-let secondNumber;
-let Operator;
+let firstNumber = "";
+let secondNumber = "";
+let operator = "";
+let result = "";
 
 // Functions for all basic math operators on calculators
 function add(a, b) {
@@ -31,24 +32,54 @@ function operate(operator, a, b) {
       return multiply(a, b);
     case "/":
       return divide(a, b);
-    default:
-      return "Invalid operator";
   }
 }
 
 let screen = document.getElementById("screen");
-let numberButtons = document.querySelectorAll(".number");
-let operatorButtons = document.querySelectorAll(".operator");
 
-// create function to populate display on number button click
-function screenUpdate()
+let numberButtons = document.querySelectorAll("#digits button"); // THIS IS A NODE LIST, ITERATE IT
+let operatorButtons = document.querySelectorAll("#operators button");
 
+numberButtons.forEach(function (button) {
+  button.addEventListener("click", function () {
+    if (operator === "") {
+      firstNumber += button.textContent;
+      screen.textContent = firstNumber;
+      // to make sure it works
+      console.log("1st number: " + firstNumber);
+    } else {
+      secondNumber += button.textContent;
+      screen.textContent = secondNumber;
+      console.log("2nd number: " + secondNumber);
+    }
+  });
+});
 
-
-
-
-
-
-
-
-numberButtons.addEventListener("click", screenUpdate);
+operatorButtons.forEach(function (button) {
+  button.addEventListener("click", function () {
+    if (button.textContent === "=") {
+      result = operate(
+        operator,
+        parseFloat(firstNumber), // Thanks Cody!
+        parseFloat(secondNumber)
+      );
+      screen.textContent = result;
+      console.log(result);
+      firstNumber = result.toString();
+      secondNumber = "";
+      operator = "";
+    } else {
+      // Handle other operator buttons
+      operator = button.textContent;
+      screen.textContent = operator;
+      result = operate(
+        operator,
+        parseFloat(firstNumber),
+        parseFloat(secondNumber)
+      );
+      firstNumber = result.toString();
+      console.log("operator: " + operator);
+      secondNumber = "";
+    }
+  });
+});
