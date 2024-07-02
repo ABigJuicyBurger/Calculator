@@ -39,6 +39,7 @@ let screen = document.getElementById("screen");
 
 let numberButtons = document.querySelectorAll("#digits button"); // THIS IS A NODE LIST, ITERATE IT
 let operatorButtons = document.querySelectorAll("#operators button");
+let clearButton = document.querySelector("#clear button");
 
 numberButtons.forEach(function (button) {
   button.addEventListener("click", function () {
@@ -58,28 +59,43 @@ numberButtons.forEach(function (button) {
 operatorButtons.forEach(function (button) {
   button.addEventListener("click", function () {
     if (button.textContent === "=") {
-      result = operate(
-        operator,
-        parseFloat(firstNumber), // Thanks Cody!
-        parseFloat(secondNumber)
-      );
-      screen.textContent = result;
-      console.log(result);
-      firstNumber = result.toString();
-      secondNumber = "";
-      operator = "";
+      if (firstNumber !== "" && secondNumber !== "") {
+        result = operate(
+          operator,
+          parseFloat(firstNumber),
+          parseFloat(secondNumber)
+        );
+        screen.textContent = result;
+        console.log(result);
+        firstNumber = result.toString();
+        secondNumber = "";
+        operator = "";
+      } else {
+        screen.textContent = "Error";
+      }
     } else {
       // Handle other operator buttons
       operator = button.textContent;
       screen.textContent = operator;
-      result = operate(
-        operator,
-        parseFloat(firstNumber),
-        parseFloat(secondNumber)
-      );
-      firstNumber = result.toString();
+      if (firstNumber !== "" && secondNumber !== "") {
+        result = operate(
+          operator,
+          parseFloat(firstNumber),
+          parseFloat(secondNumber)
+        );
+        firstNumber = result.toString();
+        screen.textContent = ""; // Clear the screen
+      }
       console.log("operator: " + operator);
       secondNumber = "";
     }
   });
+});
+
+// AC Button
+clearButton.addEventListener("click", function () {
+  firstNumber = "";
+  secondNumber = "";
+  operator = "";
+  screen.textContent = "";
 });
